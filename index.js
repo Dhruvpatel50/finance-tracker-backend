@@ -20,9 +20,13 @@ app.use(cors({
     'http://localhost:5173',
     'http://192.168.0.128:5173',
     'http://192.168.0.128:3000',
+    'https://finance-tracker-frontend.vercel.app',
+    'https://*.vercel.app',
     'null'
   ],
-  credentials: true // If your app uses cookies or auth headers
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json({ limit: '10mb' }));
