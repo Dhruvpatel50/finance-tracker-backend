@@ -17,9 +17,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://finance-tracker-frontend-ogpn-1ant6zp82.vercel.app',
-    'https://*.vercel.app',
-    'null'
+    'https://finance-tracker-frontend-ogpn-1ant6zp82.vercel.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
