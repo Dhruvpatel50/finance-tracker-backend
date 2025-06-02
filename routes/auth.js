@@ -215,7 +215,7 @@ router.post('/forgot-password', cors(), validateEmail, async (req, res) => {
 
     // Create reset URL
     // Use environment variable for client base URL, fallback to localhost for development
-    const clientBaseUrl = process.env.CLIENT_BASE_URL || 'https://finance-tracker-backend-w5uu.onrender.com';
+    const clientBaseUrl = process.env.CLIENT_BASE_URL || 'http://localhost:3000';
     const resetUrl = `${clientBaseUrl}?token=${resetToken}&email=${encodeURIComponent(email)}`;
 
     // Email content
