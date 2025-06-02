@@ -99,7 +99,7 @@ const validateEmail = (req, res, next) => {
 };
 
 // Register route
-router.post('/register', cors(), validateRegister, async (req, res) => {
+router.post('/register', validateRegister, async (req, res) => {
   const { name, email, password } = req.body;
   
   try {
@@ -138,7 +138,7 @@ router.post('/register', cors(), validateRegister, async (req, res) => {
 });
 
 // Login route
-router.post('/login', cors(), validateLogin, async (req, res) => {
+router.post('/login', validateLogin, async (req, res) => {
   const { email, password } = req.body;
   
   try {
@@ -178,7 +178,7 @@ router.post('/login', cors(), validateLogin, async (req, res) => {
 });
 
 // Forgot Password route - ENHANCED ERROR HANDLING
-router.post('/forgot-password', cors(), validateEmail, async (req, res) => {
+router.post('/forgot-password', validateEmail, async (req, res) => {
   const { email } = req.body;
   
   try {
