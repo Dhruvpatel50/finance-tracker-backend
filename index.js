@@ -7,7 +7,6 @@ const transactionRoutes = require('./routes/transactions');
 const dashboardRoutes = require('./routes/dashboard');
 const insightsRoutes = require('./routes/insights');
 const monthlyReportCron = require('./cron/monthlyReport');
-const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -48,13 +47,6 @@ app.use('/api/insights', auth, require('./routes/insights'));
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
-});
-
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
-// Serve index.html for non-API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 // Error handling middleware
