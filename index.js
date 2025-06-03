@@ -6,8 +6,6 @@ const authRoutes = require('./routes/auth');
 const transactionRoutes = require('./routes/transactions');
 const dashboardRoutes = require('./routes/dashboard');
 const insightsRoutes = require('./routes/insights');
-const monthlyReportCron = require('./cron/monthlyReport');
-
 // Load environment variables
 dotenv.config();
 
