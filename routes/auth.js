@@ -115,7 +115,7 @@ router.post('/register', validateRegister, async (req, res) => {
     user = new User({ 
       name: name.trim(),
       email: email.toLowerCase(), 
-      password: await bcrypt.hash(password, 12)
+      password: password // Password hashing is handled by the pre-save hook in User.js
     });
     
     await user.save();
