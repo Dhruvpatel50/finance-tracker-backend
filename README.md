@@ -1,4 +1,4 @@
-# 💰 Personal Finance Tracker
+# 💰 TrackIT
 
 A full-stack personal finance manager that helps users track income and expenses, visualize financial trends, and manage their budget effectively — with a secure, responsive UI.
 
